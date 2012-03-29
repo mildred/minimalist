@@ -1,0 +1,7 @@
+There are files with different translation of Minimalist's control
+messages. To use these translations, you must manually add one or more from
+these files to minimalist.pl, each other BEFORE LAST CURLY BRACKET.
+
+Other translations, if available, can be found at
+		http://www.mml.org.ua/languages/
+

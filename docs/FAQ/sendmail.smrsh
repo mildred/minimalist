@@ -1,0 +1,40 @@
+Date: Fri, 3 Sep 1999 11:01:26 -0700 (PDT)
+From: "Jeremy C. Reed" <jcr@iwbc.net>
+Subject: Re: [mml-general] Problem ...
+
+On Fri, 3 Sep 1999, Andre Eisenbach wrote:
+
+> Anyone who can help me with that one:?
+> 
+>    ----- Transcript of session follows -----
+> sh: minimalist.pl not available for sendmail programs
+> 554 "|/usr/local/sbin/minimalist.pl reguser-list"... Service unavailable
+
+
+FROM THE MINORDOMO README ...
+**Just replace minimalist with minordomo below!
+
+Notes On sendmail restricted shell (smrsh)
+
+On some sendmail based systems, you may get an error similar to the
+following when trying to mail to minordomo or a minordomo managed list:
+
+  ----- Transcript of session follows -----
+sh: minordomo.pl not available for sendmail programs
+554 "|/usr/local/sbin/minordomo.pl"... Service unavailable
+
+If you get this, you are likely running sendmail with the restricted shell
+(smrsh) option. In this case, you need to create a symbolic link to the
+minordomo.pl script in /etc/smrsh. For example:
+
+   cd /etc/smrsh
+   ln -s /usr/local/sbin/minordomo.pl .
+
+That should clear up the problem.
+
+END OF CLIP FROM README
+
+         Jeremy Reed
+
+         http://www.iwbc.net 
+         jcr@iwbc.net

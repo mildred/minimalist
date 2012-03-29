@@ -1,0 +1,9 @@
+Welcome!
+
+ This is sample information file for list \l.
+
+ Available information for this list:
+
+   . Server's administrator: \a
+   . Domain: \d
+   . List's owner: \o

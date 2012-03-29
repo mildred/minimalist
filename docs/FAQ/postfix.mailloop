@@ -1,0 +1,26 @@
+Date: Sun, 28 May 2000 15:48:47 +0200
+From: Otmar Stahl <O.Stahl@lsw.uni-heidelberg.de>
+Subject: Re: [mml-general] Looping errors
+
+On Sat, May 27, 2000 at 01:27:32AM -0700, Stephen Lawrence wrote:
+
+> I have been getting looping errors from postfix each time I send a message
+> out to my list...
+> 
+> status=bounced (mail forwarding loop for dpprices@dairypower.com)
+> 
+> Any ideas on what might be causing this? I do not have dpprices in the list.
+
+I am also running the postfix/minimalist configuration, and found out that
+the the following line in /etc/postfix/main.cf solved the problem for me:
+
+prepend_delivered_header = file, forward
+
+I think the postfix default is:
+
+prepend_delivered_header = command, file, forward 
+
+which gives the apparent looping problems with minimalist.
+
+Hope this helps,
+Otmar Stahl

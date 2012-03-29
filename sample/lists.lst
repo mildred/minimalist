@@ -1,0 +1,10 @@
+# There are comment lines starting with '#'
+#
+# This file is in free format - it simply copying to
+# user EXCEPT COMMENT LINES!
+#
+# <list name>	<short description>
+#
+list		Sample listing
+testing		This is list for
+		testing purposes only!

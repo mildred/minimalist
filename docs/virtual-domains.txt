@@ -1,0 +1,50 @@
+Virtual Domains and Minimalist
+------------------------------
+
+Here is a short manual how to set up MINImalist MAiling LIST manager, with
+virtual domains. Minimalist (http://www.mml.org.ua/) is a mailing tool
+programmed by Vladimir Litovka. Note, that MTA-specific part is about
+sendmail - the oldest (Vladimir Litovka says: "This doesn't mean it is
+better ;)") MTA in the universe.
+
+First off all set up all your lists you want. For that check the minimalist
+manual. In this example we created the lists "list-one" and "list-two".
+First list is for the domain list-one@domain1.com and second - for
+list-two@domain2.com.
+
+Add these lines into your /etc/mail/aliases file. Don't forget to run
+newaliases after that.
+
+minimalist:             "|/usr/local/sbin/minimalist.pl"
+list-one:               "|/usr/local/sbin/minimalist.pl list-one"
+list-two:		"|/usr/local/sbin/minimalist.pl list-two"
+
+Next step is to edit the /etc/mail/virtusertable. Just add the 
+two aliases into your file.
+
+# LIST ONE
+minimalist@domain1.com			minimalist
+list-one@domain1.com              	list-one
+list-one-owner@domain1.com		admin@domain1.com
+
+# LIST TWO
+minimalist@domain2.com			minimalist
+list-two@domain2.com			list-two
+list-two-owner@domain2.com		admin@domain2.com
+
+After that, just run in your /etc/mail direcotry 
+     makemap hash virtusertable < virtusertable
+and all should work fine.
+
+Don't forget to edit the config file for each list. Don't forget set
+correct domains for each list. This can be done in every local list's
+config, directive 'domain'. It would be like this:
+
+for list-one: domain = domain1.com
+and for list-two: domain = domain2.com
+
+I personally tested it on S.u.S.E. Linux 5.3 and there it works 
+fine. If there are any problems or questions or comments mail me 
+at patrick@bundi.net (Patrick Bundi).
+
+Revision (15/03/1999)

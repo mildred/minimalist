@@ -1,0 +1,11 @@
+#
+# There can be any directives from 2nd and 3rd sections of
+# minimalist.conf-sample.
+#
+# For full description of this directives see minimalist.conf-sample
+#
+domain = other.net
+maxsize = 10000
+#
+#auth = mailfrom doka@kiev.sovam.com:@/usr/local/etc/mml.trusted
+#auth = password this_secret_password
